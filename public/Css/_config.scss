@@ -1,0 +1,77 @@
+// Light Theme Variables
+$light-bg-main: #f0f0f0;
+$light-bg-secondary: #fff;
+$light-primary-color: #0a0a0a;
+$light-border: #ddd;
+$light-dark-text: #666;
+$blut-color: #0a0a0a;
+// Dark Theme Variables
+$dark-bg-main: #181818;
+$dark-bg-secondary: #0d0d0d;
+$dark-primary-color: #1c1c1c;
+$dark-border: #444;
+$dark-blut-color: #008afa;
+$dark-dark-text: #f7f7f7;
+
+// Base Variables
+$r-font: regular;
+$b-font: bold-font;
+$gos: gos;
+$base-font-size: 13px;
+
+// Font Faces
+@font-face {
+    font-family: regular;
+    src: url(../Fonts/EuclidCircularAMedium.ttf);
+}
+@font-face {
+    font-family: bold-font;
+    src: url(../Fonts/EuclidCircularABold.ttf);
+}
+@font-face {
+    font-family: gos;
+    src: url(../Fonts/gos.otf);
+}
+
+// Mixin for Font Size
+@mixin font-size($size, $line-height, $family, $color) {
+    font-size: #{$size}px;
+    font-size: #{($size / $base-font-size)}rem;
+    line-height: #{$line-height}px;
+    font-family: $family;
+    color: $color;
+}
+
+// General Reset and Default Styles
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: 0.3s all ease;
+    font-family: $r-font;
+}
+body {
+    background-color: $light-bg-main;
+    color: $light-primary-color;
+}
+
+.container {
+    background-color: $light-bg-secondary;
+    color: $light-dark-text;
+}
+
+body.dark-theme {
+    background-color: #0d0d0d;
+    color: $dark-primary-color;
+}
+
+body.dark-theme .container {
+    background-color: $dark-bg-secondary;
+    color: $dark-dark-text;
+}
+
+// Flexbox Utility
+%flx-style {
+    display: flex;
+    align-items: center;
+}

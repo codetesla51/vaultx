@@ -1,0 +1,336 @@
+@import "_config.scss";
+@import "_loader.scss";
+@import "_media-queries.scss";
+
+body {
+    background-color: $light-bg-main;
+    height: 100vh;
+    font-family: $r-font;
+}
+
+.input-group {
+    text-align: left;
+    position: relative;
+
+    label {
+        @include font-size(14px, 1, $r-font, $light-primary-color);
+        padding: 1em 1em;
+    }
+
+    input {
+        padding: 15px;
+        border: 1px solid $light-border;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+        margin-top: 5px;
+    }
+}
+
+.container {
+    padding: 100px 2%;
+    height: 100vh;
+    width: 100vw;
+
+    .logo {
+        @extend %flx-style;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            font-family: $gos;
+        }
+        h3 {
+            font-size: 20px;
+            @include respond-to("mobile") {
+                font-size: 19px;
+            }
+        }
+    }
+
+    .tabs {
+        @extend %flx-style;
+        justify-content: center;
+        gap: 1em;
+        padding: 1em 1em;
+
+        .tab {
+            padding: 0.5em 1em;
+            border-radius: 30px;
+            background: $light-bg-secondary;
+            font-family: $b-font;
+            @include respond-to("mobile") {
+                font-size: 15px;
+            }
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab.active {
+            background: #007bff;
+        }
+    }
+
+    form {
+        @extend %flx-style;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 1em 1em;
+        margin-top: 1em;
+        gap: 1em;
+
+        .login-btn {
+            width: 80%;
+            padding: 15px;
+            background-color: $light-primary-color;
+            color: $light-bg-secondary;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+
+            &:hover {
+                background-color: darken($light-primary-color, 10%);
+            }
+        }
+    }
+
+    .enctypted-files {
+        @extend %flx-style;
+        justify-content: center;
+        gap: 1em;
+        flex-direction: column;
+        margin-top: 2em;
+        h3 {
+            font-size: 20px;
+            @include respond-to("mobile") {
+                font-size: 20px;
+            }
+        }
+        .file {
+            @extend %flx-style;
+            justify-content: space-between;
+            padding: 1em 1em;
+            width: 100%;
+            background: $light-bg-secondary;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+            .name {
+                @include font-size(17px, 1, $r-font, $light-primary-color);
+            }
+
+            .actions {
+                @extend %flx-style;
+                justify-content: center;
+                gap: 1em;
+
+                i {
+                    font-size: 20px;
+                }
+
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .heding h2 {
+        font-size: 24px;
+        @include respond-to("mobile") {
+            font-size: 20px;
+        }
+    }
+}
+
+.tab.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #0d0d0d;
+    color: $dark-dark-text;
+
+    .container {
+        .logo h2 {
+            color: $dark-dark-text;
+        }
+
+        .tabs .tab {
+            background: $dark-primary-color;
+            color: $dark-dark-text;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        form {
+            background-color: $dark-bg-secondary;
+            border-color: $dark-border;
+
+            .login-btn {
+                background-color: $dark-blut-color;
+                color: $dark-bg-secondary;
+
+                &:hover {
+                    background-color: lighten($dark-blut-color, 10%);
+                }
+            }
+            input {
+                background: $dark-primary-color;
+                color: $dark-dark-text;
+            }
+            .form-control {
+                background: $dark-primary-color;
+                color: $dark-dark-text;
+            }
+        }
+
+        .enctypted-files .file {
+            background: $dark-primary-color;
+            color: $dark-dark-text;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+            .name {
+                color: $dark-dark-text;
+            }
+        }
+
+        .tabs .tab.active {
+            background-color: $dark-blut-color;
+        }
+    }
+}
+/* From Uiverse.io by JaydipPrajapati1910 */
+
+.nav-bar {
+    @extend %flx-style;
+    justify-content: space-between;
+    padding: 1em 1em;
+    .side {
+        @extend %flx-style;
+        justify-content: center;
+        gap: 1em;
+    }
+}
+/* From Uiverse.io by adeladel522 */
+.button {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+    background-color: $dark-blut-color;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ffff;
+    gap: 10px;
+    font-weight: bold;
+    border: 3px solid #ffffff4d;
+    outline: none;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    border-color: #fff9;
+}
+
+.button:hover .icon {
+    transform: translate(4px);
+}
+
+.button:hover::before {
+    animation: shine 1.5s ease-out infinite;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+}
+
+@keyframes shine {
+    0% {
+        left: -100px;
+    }
+
+    60% {
+        left: 100%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+.but {
+    margin-right: 4em;
+    width: 130px;
+    height: 40px;
+    background: $dark-blut-color;
+    border: none;
+    top: 20%;
+    border-radius: 30px;
+    left: 65%;
+}
+#encrypt,
+#decrypt,
+#keyForm {
+    display: none;
+}
+
+#encrypt.active,
+#decrypt.active,
+#keyForm.active {
+    display: flex;
+}
+#files.active {
+    display: flex;
+}
+#keys.active {
+    display: flex;
+}
+#files {
+    display: none;
+}
+#keys {
+    display: none;
+}
+.empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    margin-top: 3.5em;
+    opacity: 0.7;
+    width: 100%;
+    .icon i {
+        font-size: 50px;
+    }
+    .message {
+        margin-top: 2em;
+        text-align: center;
+    }
+}

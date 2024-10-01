@@ -1,0 +1,42 @@
+@font-face {
+  font-family: regular;
+  src: url(../Fonts/EuclidCircularAMedium.ttf);
+}
+
+@font-face {
+  font-family: bold-font;
+  src: url(../Fonts/EuclidCircularABold.ttf);
+}
+
+@font-face {
+  font-family: gos;
+  src: url(../Fonts/gos.otf);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s all ease;
+  font-family: regular;
+}
+
+body {
+  background-color: #f0f0f0;
+  color: #0a0a0a;
+}
+
+.container {
+  background-color: #fff;
+  color: #666;
+}
+
+body.dark-theme {
+  background-color: #0d0d0d;
+  color: #1c1c1c;
+}
+
+body.dark-theme .container {
+  background-color: #0d0d0d;
+  color: #f7f7f7;
+}

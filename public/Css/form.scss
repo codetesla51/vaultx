@@ -1,0 +1,214 @@
+@import "_config.scss";
+@import "_loader.scss";
+@import "_media-queries.scss";
+
+body {
+    background-color: $light-bg-main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: $r-font;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 1em 1em;
+    background-color: $light-bg-secondary;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    .header {
+        padding: 1em 1em;
+        @extend %flx-style;
+        justify-content: center;
+        gap: 2em;
+        flex-direction: column;
+        h2 {
+            @include font-size(24px, 1, $gos, $light-primary-color);
+            @include respond-to("mobile") {
+                font-size: 19px;
+            }
+        }
+        h3 {
+            @include font-size(20px, 1, $r-font, $light-primary-color);
+            font-weight: 400;
+        }
+    }
+}
+
+.login-box {
+    text-align: center;
+}
+
+.login-box h2 {
+    @include font-size(24px, 1, $r-font, $light-primary-color);
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    margin-bottom: 20px;
+    color: $light-dark-text;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    @include font-size(14px, 1, $r-font, $light-primary-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid $light-border;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+
+    margin-top: 5px;
+}
+
+.forgot-password {
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: $light-primary-color;
+    color: $light-bg-secondary;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+        background-color: darken($light-primary-color, 10%);
+    }
+}
+
+.google-login {
+    width: 100%;
+    background-color: $light-bg-secondary;
+    color: $light-primary-color;
+    border: 1px solid $light-border;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+
+    @extend %flx-style;
+    justify-content: center;
+
+    img {
+        width: 30px;
+        margin-right: 10px;
+    }
+}
+
+.signup-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: $light-dark-text;
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+a {
+    text-decoration: none;
+    outline: none;
+}
+.google {
+    @extend %flx-style;
+
+    justify-content: center;
+    width: 100%;
+    background-color: $light-bg-secondary;
+    color: $light-primary-color;
+    border: 1px solid $light-border;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    .image {
+        width: 10%;
+        img {
+            width: 50px;
+        }
+    }
+    .text {
+        width: 50%;
+        text-decoration: none;
+    }
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .login-box h2 {
+        @include font-size(20px, 1, $r-font, $light-primary-color);
+    }
+
+    .login-btn,
+    .google-login {
+        padding: 10px;
+    }
+}
+.go {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+/* From Uiverse.i by Yaya12085 */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    gap: 0.75rem;
+    color: rgb(65, 63, 63);
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+
+.button svg {
+    height: 24px;
+}
+
+.button:hover {
+    transform: scale(1.02);
+}
